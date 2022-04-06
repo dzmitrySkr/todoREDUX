@@ -11,7 +11,10 @@ function Onetask({ name }) {
     setInputstate(!inputstate);
   };
 
+
+  //Тут опять достаем наш стор(объект) и присваиваем переменной
   let firstStore = useSelector((state) => state.reducer.tasks);
+  //Достаем наш второй стор(объект) и присваиваем переменной
   let secStore = useSelector((state) => state.newreducer);
   let dispatch = useDispatch();
   console.log(secStore);
@@ -25,8 +28,12 @@ function Onetask({ name }) {
           value={secStore.input}
           autoFocus
           className="input"
+
+          //Тут надо записывать из второго стора(инпута) в первый стор. СПРОСИТЬ У ПАВЛА
           onClick={() => toggle()}
           onKeyPress={(e) => e.key === "Enter" && toggle()}
+
+          //Тут надо как-то положить наш name во второй стор, и дописывать в него что-то. СПРОСИТЬ У ПАВЛА
           onChange={(e) => dispatch(createInp(name, e.target.value))}
         ></input>
       )}

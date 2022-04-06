@@ -7,11 +7,15 @@ import { createTask } from "./store/action";
 
 function Wrapper() {
 
+  //с помощью useSelector достаем из редьюсера нащ обьект(стор)
   let app = useSelector((state) => state.reducer.tasks);
+
+  //с помощью useDispatch достаем диспатчи из обекта стор
   let dispatch = useDispatch();
   console.log(app);
 
   //Интпут
+  //Тут наверно ене правильно, надо использовать REDUX, спросить у Павла
   let [inp, setInp] = useState("");
 
   return (

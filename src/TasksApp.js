@@ -9,6 +9,8 @@ import { newreducer } from "./inpstore/reduser.js";
 
 function TaskApp() {
 
+
+  //Тут создаем стор, при помощи combineReducers добавляем в него два редьюсера
   let store = createStore(combineReducers({reducer, newreducer}));
 
   //Интпут
