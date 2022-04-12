@@ -12,10 +12,10 @@ const createTask = (task = '55') => {
     }
 }
 
-const changeTask = (task, e) => {
+const changeTask = (id, e) => {
     return {
         type: CHANGE_STORE,
-        payloud: task,
+        payloud: id,
         income: e,
     }
 }

@@ -13,7 +13,7 @@ import {
     switch (action.type) {
       case INPUT:
         return {...defaultStore,  input: action.payloud };
-  
+
     }
     return store;
   };
