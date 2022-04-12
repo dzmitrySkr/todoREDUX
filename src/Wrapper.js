@@ -18,7 +18,7 @@ function Wrapper() {
   //Интпут
   //Тут наверно ене правильно, надо использовать REDUX, спросить у Павла
   let [inp, setInp] = useState("");
-
+  console.log(5545);
 
   return (
     <div>

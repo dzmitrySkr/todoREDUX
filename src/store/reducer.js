@@ -25,8 +25,9 @@ export let reducer = (store = defaultStore, action) => {
 
     case CHANGE_STORE:
    
-      store.tasks.map((item, index) =>item.id === action.payloud  ? (store.tasks[index].text = action.income) : item.text);
-      return {...store};
+     let a = store.tasks.filter((item, index) => {return item.id === action.payloud  ? (store.tasks[index].text = action.income) : item.text});
+     console.log(a);
+     return  {tasks:a};
   }
   return store;
 };
