@@ -1,13 +1,10 @@
-const INPUT = 'INPUT'
-
-
-
+const INPUT = "INPUT";
 
 const createInp = (inp) => {
-    return {
-        type: INPUT,
-        payloud: inp
-    }
-}
+  return {
+    type: INPUT,
+    payloud: inp,
+  };
+};
 
-export {createInp, INPUT}
+export { createInp, INPUT };

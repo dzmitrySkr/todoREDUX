@@ -6,27 +6,22 @@ import { createInp } from "./inpstore/action";
 function Onetask({ name, id, func }) {
   let [inputstate, setInputstate] = useState(true);
 
- 
   //Тут опять достаем наш стор(объект) и присваиваем переменной
   let firstStore = useSelector((state) => state.reducer.tasks);
   //Достаем наш второй стор(объект) и присваиваем переменной
   let secStore = useSelector((state) => state.newreducer);
   let dispatch = useDispatch();
 
+  let toggle = () => {
+    dispatch(createInp(name));
+    !inputstate && dispatch(changeTask(id, secStore.input));
+    !inputstate && dispatch(createInp(""));
 
- let toggle = () => {
-    dispatch(createInp(name))
-    !inputstate &&  dispatch(changeTask(id, secStore.input));
-    !inputstate &&  dispatch(createInp(''));
-  
     setInputstate(!inputstate);
-
-
   };
 
   return (
     <div className="flexcontainer">
-     
       {inputstate ? (
         <p onClick={() => toggle()}>{name}</p>
       ) : (
